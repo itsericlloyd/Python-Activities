@@ -1,0 +1,16 @@
+Fullname = "Eric Lloyd Callo"
+Age = 19
+Height = 160.02
+Is_working = False
+
+print("Fullname:",Fullname)
+print(type(Fullname))
+
+print("\nAge:", Age)
+print(type(Age))
+
+print("\nHeight:",Height)
+print(type(Height))
+
+print("\nCurrently working?",Is_working)
+print(type(Is_working))
