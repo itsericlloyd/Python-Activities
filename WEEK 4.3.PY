@@ -32,7 +32,6 @@ else:
     print("Invalid choice")
     exit()
 
-# Remove .0 if whole number
 if result == int(result):
     result = int(result)
 if num1 == int(num1):
