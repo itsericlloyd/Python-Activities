@@ -1,0 +1,45 @@
+
+try:
+    file_handle = open("callo_notes.txt", "x")
+    file_handle.close()
+    print("File created successfully.")
+except FileExistsError:
+    print("Notice: File already exists.")
+
+# Step 2: Menu loop
+while True:
+    print("\nOptions:")
+    print("1. Add a note")
+    print("2. Display notes")
+    print("3. Quit")
+
+    user_option = input("Select an option (1, 2, or 3): ")
+
+    if user_option == "1":
+        user_input = input("Enter your note: ")
+        try:
+            with open("callo_notes.txt", "a") as file_handle:
+                file_handle.write(user_input + "\n")
+            print("Note added.")
+        except Exception as error:
+            print("Write error:", error)
+
+    elif user_option == "2":
+        try:
+            with open("callo_notes.txt", "r") as file_handle:
+                data = file_handle.read()
+                if data.strip():
+                    print("\nSaved Notes:")
+                    print(data)
+                else:
+                    print("No notes found.")
+        except Exception as error:
+            print("Read error:", error)
+
+    elif user_option == "3":
+        print("Exiting the program. Goodbye!")
+        break
+
+    else:
+        print("Invalid option. Please try again.")
+Show quoted text
